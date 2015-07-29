@@ -1,0 +1,22 @@
+{
+  "name": "ss-tomo-challenge",
+  "version": "0.1.0",
+  "description": "Solution for ToMo's front-end challenge by Sompop Suksawat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssuksawat/front-end-challenge.git"
+  },
+  "author": "Sompop Suksawat",
+  "license": " ",
+  "bugs": {
+    "url": "https://github.com/ssuksawat/front-end-challenge/issues"
+  },
+  "homepage": "https://github.com/ssuksawat/front-end-challenge",
+  "dependencies": {
+    "node-static": "^0.7.7"
+  }
+}
