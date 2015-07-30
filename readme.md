@@ -1,4 +1,4 @@
-Demo Link: https://ss-tomo-challenge.herokuapp.com/
+**Demo:** https://ss-tomo-challenge.herokuapp.com/
 
 # Front-End Challenge
 
