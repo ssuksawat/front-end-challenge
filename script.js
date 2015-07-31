@@ -64,6 +64,15 @@
           wrapperEl.remove();
         }, 250);  //using setTimeout for smooth animation
       });
+      
+      //Flip product card
+      $('button.flip-btn').click(function(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        
+        var wrapperEl = $(this).closest('.product-wrapper');
+        wrapperEl.toggleClass('flip-180');
+      });
     }
     
     function removeLoadingOverlay() {
@@ -88,7 +97,7 @@
 
     self.updateHtml = function (callback) {
       $.get('product-template.html', function (template) {
-        self.htmlview = template.replace('{image}', self.photo).replace('{title}', self.title).replace('{tagline}', self.tagline).replace('{url}', self.url).replace('{custom_class}', self.custom_class).replace('{description}', self.description);
+        self.htmlview = template.replace('{image}', self.photo).replace(/{title}/g, self.title).replace(/{tagline}/g, self.tagline).replace('{url}', self.url).replace('{custom_class}', self.custom_class).replace(/{description}/g, self.description);
       
         if (callback && typeof callback === 'function') {
           callback();

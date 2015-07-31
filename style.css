@@ -73,14 +73,20 @@ h4.tagline {
 
 /* ----- Product Box styling ----- */
 
-.product-wrapper {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease; 
+.product-wrapper {  
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1050;
 }
 .product-container {
-/*  border: 2px solid #34495E; */
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  
   margin: 20px 10px 20px 10px;
   position: relative;
 }
@@ -99,18 +105,47 @@ h4.tagline {
   padding: 3px;
 }
 .product-container .description {
-  background-color: rgb(44, 62, 80);
+/*  background-color: rgb(44, 62, 80);*/
+  background-color: black;
   padding: 10px;
+  border-top: 4px solid black;
+}
+.product-container.front:hover .description {
+  border-top: 4px solid #0078cc;
 }
 .product-container .remove-btn {
   position: absolute;
   right: 5px;
   z-index: 1010;
+  font-size: 35px;
+}
+.flip-btn {
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  
+  min-width: 90px;
+  min-height: 32px;
+  font-size: 13px;
+  vertical-align: middle;
+  background-color: #0096ff;
+  color: white;
+  border: none;
+  margin: 10px;
+}
+.flip-btn:hover {
+  background-color: #0078cc;
+  color: #bdc3c7;
+}
+.front .flip-btn {
+  z-index: 1050;
+  margin: 10px auto;
 }
 .product-container .img-wrapper {
   position: relative; 
 }
-.product-container .overlay {
+.product-container.front .overlay {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -124,25 +159,64 @@ h4.tagline {
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-.product-container:hover .overlay {
+.product-container.front:hover .overlay {
   opacity: 1;
 }
-.product-container .overlay > div {
+.product-container.front .overlay > div {
   padding: 30px 15px 30px 15px;
   width: auto;
   height: 100%;  
   color: #bdc3c7;
 }
-.product-container:hover .overlay > div {
+.product-container.front:hover .overlay > div {
   background-color: rgba(0, 0, 0, 0.8);
+}
+.flip-180 .product-container.front,
+.flip-180 .product-container.front.flip-180:hover .overlay{
+  display: none;
+}
+.product-container.back {
+  display: none;
+  color: #bdc3c7;
+  
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.product-container.back > div {
+  background-color: black;
+  padding: 20px;
+}
+.back .title {
+  color: #d7dbdd; 
+  margin: 5px;
+}
+.back .remove-btn {
+  color: #f9fafa;
+  opacity: 0.5;
+}
+.back .remove-btn:hover {
+  opacity: 0.8; 
+}
+.flip-180 .product-container.back {
+  display: block;
 }
 
 /* ----- End Product Box ----- */
 
 
 /* ----- Classes for Transition ----- */
+
 .fade-out {
   opacity: 0;
+}
+
+.flip-180 {
+  -webkit-transform: perspective(500px) rotateY(180deg);
+  -moz-transform: perspective(500px) rotateY(180deg);
+  -o-transform: perspective(500px) rotateY(180deg);
+  transform: perspective(500px) rotateY(180deg);
 }
 
 @keyframes rotate-360 {
