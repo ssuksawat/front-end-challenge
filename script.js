@@ -30,13 +30,7 @@
       var i = 0;
       var thishtml = '';
       for (var i = 0; i < self.products.length; i++) {
-        if (i % 3 === 0) {  
-          console.log('START'); 
-        }
         thishtml += self.products[i].htmlview;
-        if ((i % 3 === 2) || i === (self.products.length - 1) ) { 
-          console.log('FINISH'); 
-        }
       }
       $('#content').append(thishtml);
       addEventListeners();
@@ -62,7 +56,7 @@
         wrapperEl.addClass('fade-out');
         setTimeout(function () {
           wrapperEl.remove();
-        }, 250);  //using setTimeout for smooth animation
+        }, 250);  //setTimeout to let fade transition finish before removing element
       });
       
       //Flip product card
@@ -80,7 +74,7 @@
       overlayEl.addClass('slide-up fade-out');
       setTimeout(function () {
         overlayEl.remove();
-      }, 500);  //using setTimeout for smooth animation
+      }, 500);  //setTimeout to let slide & fade transition finish before removing element
     }
   }
 
