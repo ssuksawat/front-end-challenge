@@ -1,3 +1,5 @@
+**Solution:** https://ss-tomo-challenge.herokuapp.com/
+
 # Front-End Challenge
 
 This challenge is designed to let you show your thought process and approach to some basic tasks of front-end engineering. There are many ways to perform these tasks and we are not looking for a particular "right way". However, we do appreciate some basic principles of software design including performance, maintainability, usability, etc... 
